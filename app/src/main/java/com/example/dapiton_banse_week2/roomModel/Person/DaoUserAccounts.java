@@ -19,10 +19,10 @@ public interface DaoUserAccounts {
 
     //--- list all the accounts except the user_id who's currently login
     @Query("Select * from UserAccounts where user_id != :userID")
-    List<UserAccounts> getAllAccounts(int userID);
+    List<UserAccounts> getAllAccountsExcept(int userID);
 
     @Query("Select * from UserAccounts where user_id = :user_id Limit 1")
-    UserAccounts getUserID(int user_id);
+    UserAccounts getUserByID(int user_id);
 
     @Update
     void updateAccount(UserAccounts user);
