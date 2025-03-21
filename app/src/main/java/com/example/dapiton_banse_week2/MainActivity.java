@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.dapiton_banse_week2.roomModel.Person.AppDataPerson;
 import com.example.dapiton_banse_week2.roomModel.Person.DaoUserAccounts;
+import com.example.dapiton_banse_week2.roomModel.Person.Possesions;
 import com.example.dapiton_banse_week2.roomModel.Person.UserAccounts;
 
 import java.util.concurrent.ExecutorService;
@@ -36,9 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Run database operation in the background
         executor.execute(() -> {
-            daoUserAccounts.insertAccount(new UserAccounts("username03", "password2", "Admin"));
 
+            daoUserAccounts.insertAccount(new UserAccounts("username04", "password2", "Admin"));
+//            daoUserAccounts.insertPossesions(new Possesions(1,"MSI", 42000, "Owned"));
 
+            daoUserAccounts.updatePossesions(0, 1, "Possesion 2", 999, "For Sale");
+            daoUserAccounts.deletePossesions(0);
         });
 
 
