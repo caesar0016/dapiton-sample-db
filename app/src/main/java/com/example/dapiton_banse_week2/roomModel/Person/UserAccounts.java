@@ -1,6 +1,7 @@
 package com.example.dapiton_banse_week2.roomModel.Person;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -42,7 +43,7 @@ public class UserAccounts {
     public void setUserType(String userType) {
         this.userType = userType;
     }
-
+    @Ignore
     public UserAccounts(int user_id, String username, String password, String userType) {
         this.user_id = user_id;
         this.username = username;

@@ -5,6 +5,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.dapiton_banse_week2.roomModel.Person.UserAccounts;
+
 import java.util.List;
 
 @Dao
@@ -93,4 +95,8 @@ public interface CarRentalDao {
 
     @Query("DELETE FROM user_accounts WHERE acc_id = :userId")
     void deleteUserById(int userId);
+
+    @Query("Select * from user_accounts")
+    void getAllAccounts(UserAccounts account);
+
 }
